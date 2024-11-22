@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  ToDoApp
 //
-//  Created by Искандер Ситдиков on 11.11.2024.
+//  Created by Искандер Ситдиков on 16.11.2024.
 //
 
 import UIKit
