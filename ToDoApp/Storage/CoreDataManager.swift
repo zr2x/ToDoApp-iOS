@@ -13,7 +13,7 @@ protocol DataManagerProtocol {
                     shortDescription: String,
                     fullDescription: String,
                     status: TaskStatus,
-                    createdDate: Date) throws -> TaskEntity?
+                    createdDate: Date) -> TaskEntity?
     
     func fetch<T: NSManagedObject>(_ type: T) throws -> [T]
     func update(_ object: NSManagedObject, updates: (NSManagedObject) -> Void)
@@ -52,7 +52,7 @@ final class CoreDataManager: NSObject, DataManagerProtocol {
                     shortDescription: String,
                     fullDescription: String,
                     status: TaskStatus = .new,
-                    createdDate: Date) throws -> TaskEntity? {
+                    createdDate: Date) -> TaskEntity? {
         guard let entityDescription = NSEntityDescription.entity(forEntityName: "TaskEntity", in: context) else { return nil }
         
         let task = TaskEntity(entity: entityDescription, insertInto: context)
@@ -64,8 +64,6 @@ final class CoreDataManager: NSObject, DataManagerProtocol {
         
         do {
             saveContext()
-        } catch {
-            throw TaskError.coreDataSaveFailed
         }
         return task
     }

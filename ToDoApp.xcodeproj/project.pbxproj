@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		061B73832CEB821300C13ABD /* TaskModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061B73822CEB820E00C13ABD /* TaskModule.swift */; };
-		C0071E7B2CF0A98C003FBFF9 /* ToDoApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C0071E792CF0A98C003FBFF9 /* ToDoApp.xcdatamodeld */; };
 		C037796A2CEFB4FA0017BC23 /* UIViewController + extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03779692CEFB4FA0017BC23 /* UIViewController + extension.swift */; };
 		C037796E2CF04A8F0017BC23 /* TaskError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C037796D2CF04A8F0017BC23 /* TaskError.swift */; };
 		C05D85B22CEA094D00593F9C /* AddTaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05D85B12CEA094D00593F9C /* AddTaskViewModel.swift */; };
@@ -23,6 +22,7 @@
 		C06AB0AC2CE2463600B20AD2 /* AddTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06AB0AB2CE2463600B20AD2 /* AddTaskViewController.swift */; };
 		C06AB0AF2CE2470000B20AD2 /* ToDoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06AB0AE2CE2470000B20AD2 /* ToDoTableViewCell.swift */; };
 		C06AB0B22CE24A9600B20AD2 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = C06AB0B12CE24A9600B20AD2 /* SnapKit */; };
+		C08B810A2CF11CF90052F1A0 /* ToDoApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C08B81042CF118DC0052F1A0 /* ToDoApp.xcdatamodeld */; };
 		C0B2D0A92CE26BC800416CA6 /* TaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B2D0A82CE26BC800416CA6 /* TaskModel.swift */; };
 		C0B2D0AB2CE289C600416CA6 /* TaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B2D0AA2CE289C600416CA6 /* TaskViewModel.swift */; };
 		C0B2D0B12CE2902400416CA6 /* DetailTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B2D0B02CE2902400416CA6 /* DetailTaskViewController.swift */; };
@@ -33,7 +33,6 @@
 
 /* Begin PBXFileReference section */
 		061B73822CEB820E00C13ABD /* TaskModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskModule.swift; sourceTree = "<group>"; };
-		C0071E7A2CF0A98C003FBFF9 /* ToDoApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ToDoApp.xcdatamodel; sourceTree = "<group>"; };
 		C03779692CEFB4FA0017BC23 /* UIViewController + extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + extension.swift"; sourceTree = "<group>"; };
 		C037796D2CF04A8F0017BC23 /* TaskError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskError.swift; sourceTree = "<group>"; };
 		C05D85B12CEA094D00593F9C /* AddTaskViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskViewModel.swift; sourceTree = "<group>"; };
@@ -51,6 +50,7 @@
 		C06AB0A12CE1F25E00B20AD2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C06AB0AB2CE2463600B20AD2 /* AddTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskViewController.swift; sourceTree = "<group>"; };
 		C06AB0AE2CE2470000B20AD2 /* ToDoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoTableViewCell.swift; sourceTree = "<group>"; };
+		C08B81052CF118DC0052F1A0 /* ToDoApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ToDoApp.xcdatamodel; sourceTree = "<group>"; };
 		C0B2D0A82CE26BC800416CA6 /* TaskModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskModel.swift; sourceTree = "<group>"; };
 		C0B2D0AA2CE289C600416CA6 /* TaskViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewModel.swift; sourceTree = "<group>"; };
 		C0B2D0B02CE2902400416CA6 /* DetailTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTaskViewController.swift; sourceTree = "<group>"; };
@@ -116,7 +116,7 @@
 		C06AB08F2CE1F25C00B20AD2 /* ToDoApp */ = {
 			isa = PBXGroup;
 			children = (
-				C0071E792CF0A98C003FBFF9 /* ToDoApp.xcdatamodeld */,
+				C08B810B2CF11EDE0052F1A0 /* CoreData */,
 				C06AB0A72CE1FB0200B20AD2 /* App */,
 				C06AB0A82CE2450400B20AD2 /* Modules */,
 				C0B2D0AD2CE28F4200416CA6 /* Services */,
@@ -177,6 +177,14 @@
 				C0B2D0A82CE26BC800416CA6 /* TaskModel.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		C08B810B2CF11EDE0052F1A0 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				C08B81042CF118DC0052F1A0 /* ToDoApp.xcdatamodeld */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 		C0B2D0AD2CE28F4200416CA6 /* Services */ = {
@@ -281,7 +289,7 @@
 				C05D85B42CEA0AE000593F9C /* Coordinator.swift in Sources */,
 				C06AB0932CE1F25C00B20AD2 /* SceneDelegate.swift in Sources */,
 				061B73832CEB821300C13ABD /* TaskModule.swift in Sources */,
-				C0071E7B2CF0A98C003FBFF9 /* ToDoApp.xcdatamodeld in Sources */,
+				C08B810A2CF11CF90052F1A0 /* ToDoApp.xcdatamodeld in Sources */,
 				C05D85B22CEA094D00593F9C /* AddTaskViewModel.swift in Sources */,
 				C0B2D0C62CE48A2A00416CA6 /* TaskEntity.swift in Sources */,
 				C0B2D0B62CE3561A00416CA6 /* TaskRepository.swift in Sources */,
@@ -539,14 +547,13 @@
 /* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
-		C0071E792CF0A98C003FBFF9 /* ToDoApp.xcdatamodeld */ = {
+		C08B81042CF118DC0052F1A0 /* ToDoApp.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				C0071E7A2CF0A98C003FBFF9 /* ToDoApp.xcdatamodel */,
+				C08B81052CF118DC0052F1A0 /* ToDoApp.xcdatamodel */,
 			);
-			currentVersion = C0071E7A2CF0A98C003FBFF9 /* ToDoApp.xcdatamodel */;
-			name = ToDoApp.xcdatamodeld;
-			path = /Users/zr2x/Downloads/ToDoApp/ToDoApp/ToDoApp.xcdatamodeld;
+			currentVersion = C08B81052CF118DC0052F1A0 /* ToDoApp.xcdatamodel */;
+			path = ToDoApp.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
