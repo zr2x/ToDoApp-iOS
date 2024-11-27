@@ -130,7 +130,7 @@ final class ToDoTableViewCell: UITableViewCell {
 
     func configure(with task: TaskModel, canDelete: Bool) {
         deleteButton.isHidden = !canDelete
-        taskCreatedLabel.text = "task_created".localized + task.formattedDate
+        taskCreatedLabel.text = Constants.Task.created + task.formattedDate
         taskNameLabel.text = task.shortDescription
         taskStatusButton.setTitle(task.status.localized, for: .normal)
 

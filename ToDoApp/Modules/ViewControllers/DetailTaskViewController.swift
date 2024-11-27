@@ -72,9 +72,9 @@ final class DetailTaskViewController: UIViewController {
     
     private func configure(with task: TaskModel) {
         shortDescriptionLabel.text = task.shortDescription
-        fullDescriptionLabel.text = task.fullDescription?.isEmpty ?? true ? "full_description_empty_title".localized : task.fullDescription
-        statusLabel.text = "task_status".localized + task.status.localized
-        createdLabel.text = "task_created".localized + task.formattedDate
+        fullDescriptionLabel.text = task.fullDescription?.isEmpty ?? true ? Constants.Validation.fullDescriptionEmpty : task.fullDescription
+        statusLabel.text = Constants.Task.status + task.status.localized
+        createdLabel.text = Constants.Task.created + task.formattedDate
     }
     
     private func setupViews() {

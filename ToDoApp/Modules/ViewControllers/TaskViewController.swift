@@ -61,7 +61,7 @@ final class TaskViewController: UIViewController {
         
         viewModel.onError = { [weak self] errorMessage in
             guard let self else { return }
-            self.showAlert(title: "error_title".localized, message: errorMessage)
+            self.showAlert(title: Constants.Error.genericTitle, message: errorMessage)
         }
     }
 
@@ -80,24 +80,24 @@ final class TaskViewController: UIViewController {
     
     private func showStatusAlert(for task: TaskModel) {
         var updatedTask = task
-        let alertController = UIAlertController(title: "task_change_status".localized, message: nil, preferredStyle: .actionSheet)
+        let alertController = UIAlertController(title: Constants.Task.changeStatus, message: nil, preferredStyle: .actionSheet)
         
         switch task.status {
         case .new:
-            alertController.addAction(UIAlertAction(title: "task_take_in_progress".localized, style: .default, handler: { [weak self] _ in
+            alertController.addAction(UIAlertAction(title: Constants.Task.takeInProgress, style: .default, handler: { [weak self] _ in
                 updatedTask.status = .inProgress
                 self?.viewModel.updateTask(updatedTask)
             }))
         case .inProgress:
-            alertController.addAction(UIAlertAction(title: "task_finish".localized, style: .default, handler: { [weak self] _ in
+            alertController.addAction(UIAlertAction(title: Constants.Task.finish, style: .default, handler: { [weak self] _ in
                 updatedTask.status = .done
                 self?.viewModel.updateTask(updatedTask)
             }))
         case .done:
-            alertController.addAction(UIAlertAction(title: "task_already_done".localized, style: .default))
+            alertController.addAction(UIAlertAction(title: Constants.Task.alreadyDone, style: .default))
             
         }
-        alertController.addAction(UIAlertAction(title: "cancel_title".localized, style: .cancel))
+        alertController.addAction(UIAlertAction(title: Constants.Button.cancel, style: .cancel))
         present(alertController, animated: true)
     }
 

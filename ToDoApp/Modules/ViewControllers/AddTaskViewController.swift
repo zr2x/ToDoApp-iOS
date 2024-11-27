@@ -14,7 +14,7 @@ final class AddTaskViewController: UIViewController {
     // MARK: - UI
     private lazy var shortDescriptionField = {
         let textField = UITextField()
-        textField.placeholder = "short_description_placeholder".localized
+        textField.placeholder = Constants.Placeholder.shortDescription
         textField.borderStyle = .roundedRect
         textField.backgroundColor = .systemGray5
         return textField
@@ -22,7 +22,7 @@ final class AddTaskViewController: UIViewController {
     
     private lazy var fullDescriptionField = {
         let textField = UITextField()
-        textField.placeholder = "full_description_placeholder".localized
+        textField.placeholder = Constants.Placeholder.fullDescription
         textField.borderStyle = .roundedRect
         textField.backgroundColor = .lightGray
         return textField
@@ -39,7 +39,7 @@ final class AddTaskViewController: UIViewController {
         let button = UIButton()
         button.backgroundColor = .secondarySystemBackground
         button.layer.cornerRadius = 10
-        button.setTitle("save_button_title".localized, for: .normal)
+        button.setTitle(Constants.Button.save, for: .normal)
         button.addTarget(nil, action: #selector(didTapSave), for: .touchUpInside)
         button.backgroundColor = .systemBlue
         return button
@@ -151,8 +151,8 @@ final class AddTaskViewController: UIViewController {
     private func didTapSave() {
         guard let shortDescription = shortDescriptionField.text,
         !shortDescription.isEmpty else { 
-            showAlert(title: "error_title".localized,
-                      message: "error_message".localized)
+            showAlert(title: Constants.Error.genericTitle,
+                      message: Constants.Validation.shortDescriptionEmpty)
             return }
         
         let fullDescription = fullDescriptionField.text ?? ""
