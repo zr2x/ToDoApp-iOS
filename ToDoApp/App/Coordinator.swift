@@ -43,12 +43,12 @@ final class AppCoordinator: CoordinatorProtocol {
     private func showAddTask() {
         var viewModel: AddTaskViewModelProtocol = AddTaskViewModelImp(taskService: taskRepository)
         let vc = AddTaskViewController(viewModel: viewModel)
-        vc.onTaskSaved = {
-            self.navigationController.popViewController(animated: true)
+        vc.onTaskSaved = { [weak self] in
+            self?.navigationController.popViewController(animated: true)
         }
         
-        viewModel.onError = { errorMessage in
-            vc.showAlert(title: "error_title".localized, message: errorMessage)
+        viewModel.onError = { [weak vc] errorMessage in
+            vc?.showAlert(title: "error_title".localized, message: errorMessage)
         }
         navigationController.pushViewController(vc, animated: true)
     }
